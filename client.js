@@ -15,7 +15,7 @@ const connect = () => {
   conn.on('connect', () => {
     console.log('I\'m in the Matrix.'); //upon connection
     conn.write("Name: MCD");            //sends to server
-
+    conn.write("Say: I\'m hungry!");
   });
   
   return conn;
