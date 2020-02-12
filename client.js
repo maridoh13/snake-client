@@ -11,9 +11,11 @@ const connect = function() {
     console.log('Server says', data);
   });
 
-  // conn.on('connect', () => {
-  //   conn.write('Hello from the other side!');
-  // });
+  conn.on('connect', () => {
+    console.log('I\'m in the Matrix.');
+    conn.write("Name: MCD");
+  });
+
   
   return conn;
 }
