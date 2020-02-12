@@ -7,16 +7,24 @@ const connect = function() {
   });
   conn.setEncoding('utf8'); 
 
-  conn.on('data', (data) => {
+  conn.on('data', (data) => { //Listens to data from server
     console.log('Server says', data);
   });
 
   conn.on('connect', () => {
-    console.log('I\'m in the Matrix.');
-    conn.write("Name: MCD");
-  });
+    console.log('I\'m in the Matrix.'); //upon connection
+    conn.write("Name: MCD");            //sends to server
 
+  });
   
+  // const moveUp = () => {
+  //   conn.write("Move: up");
+  // }
+  // conn.on('connect', () => {
+  //   setInterval(moveUp, 500);
+  // });
+
+
   return conn;
 }
 
