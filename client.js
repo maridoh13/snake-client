@@ -1,10 +1,11 @@
 const net = require('net');
 
-const connect = function() {
+const connect = () => {
   const conn = net.createConnection({ 
     host: '192.168.88.177',
     port: 50541
   });
+
   conn.setEncoding('utf8'); 
 
   conn.on('data', (data) => { //Listens to data from server
@@ -17,14 +18,6 @@ const connect = function() {
 
   });
   
-  // const moveUp = () => {
-  //   conn.write("Move: up");
-  // }
-  // conn.on('connect', () => {
-  //   setInterval(moveUp, 500);
-  // });
-
-
   return conn;
 }
 
